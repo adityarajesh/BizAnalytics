@@ -1,0 +1,4 @@
+SELECT 
+COUNT(confirmed_cases)
+FROM `bigquery-public-data.covid19_italy.data_by_province`
+
