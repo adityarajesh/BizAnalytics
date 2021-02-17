@@ -2,3 +2,37 @@ SELECT
 COUNT(confirmed_cases)
 FROM `bigquery-public-data.covid19_italy.data_by_province`
 
+SELECT 
+max(confirmed_cases)
+FROM `bigquery-public-data.covid19_italy.data_by_province`
+
+SELECT
+sum(confirmed_cases)
+FROM `bigquery-public-data.covid19_italy.data_by_province` 
+
+SELECT
+min(confirmed_cases)
+FROM `bigquery-public-data.covid19_italy.data_by_province` 
+
+SELECT
+region_name
+FROM `bigquery-public-data.covid19_italy.data_by_province` 
+group by region_name
+
+SELECT
+date,
+region_name as Place,
+confirmed_cases,
+FROM `bigquery-public-data.covid19_italy.data_by_province` 
+
+SELECT 
+region_name,
+max(hospitalized_patients_intensive_care)
+FROM `bigquery-public-data.covid19_italy.data_by_region`
+group by region_name
+
+SELECT 
+region_name, recovered, deaths,
+max(hospitalized_patients_intensive_care)
+FROM `bigquery-public-data.covid19_italy.data_by_region`
+group by region_name, recovered, deaths
