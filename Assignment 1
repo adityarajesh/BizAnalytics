@@ -36,3 +36,8 @@ region_name, recovered, deaths,
 max(hospitalized_patients_intensive_care)
 FROM `bigquery-public-data.covid19_italy.data_by_region`
 group by region_name, recovered, deaths
+
+SELECT*
+FROM `bigquery-public-data.covid19_italy.data_by_province` 
+INNER JOIN `bigquery-public-data.covid19_italy.data_by_region` 
+ON `bigquery-public-data.covid19_italy.data_by_region`. region_code = `bigquery-public-data.covid19_italy.data_by_region`.region_code
